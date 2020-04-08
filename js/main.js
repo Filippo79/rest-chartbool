@@ -18,6 +18,13 @@ $(document).ready(function() {
                     'novembre': 0,
                     'dicembre': 0
             };
+            //Estrarre tutte le chiavi di un oggetto e metterle in un array
+            var listaMesi = Object.keys(venditePerMese);
+            // console.log('risultato object.keys', listaMesi)
+            //Estrarre tutti i valori di un oggetto e li mette in un array
+            var fatturaMesi = Object.values(venditePerMese);
+            // console.log('risultato object.values', fatturaMesi)
+
             var dati = data;
             for (var i = 0; i < dati.length; i++) {
                 var datiCliente = dati[i];
@@ -34,40 +41,43 @@ $(document).ready(function() {
                 venditePerMese[mesiVendita] += vendutoClienti;
                 // console.log(venditePerMese);
             }
-
             var venduto =[];
             for (var key in venditePerMese) {
                 // console.log(key);
                 venduto.push(venditePerMese[key]);
-            } console.log(venduto);
-            return venduto;
+            } //console.log(venduto);
 
 
+            var ctx = $('#ChartBool');
+            var chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: listaMesi,
+                    datasets: [{
+                        label: 'Vendite Annuali',
+                        backgroundColor: '',
+                        borderColor: 'darkblue',
+                        data: venduto,
+                    }],
+                },
+            });
 
-
-
+            // var ctx = $('#ChartBool');
+            // var chart = new Chart(ctx, {
+            //     type: 'pie',
+            //     data: {
+            //         datasets: [{
+            //             data: venduto ,
+            //             backgroundColor: ,
+            //         }],
+            //         labels:venduto
+            //     }
+            // });
         }
     });
-    // var ctx = $('#ChartBool');
-    // var chart = new Chart(ctx, {
-    //     type: 'line',
-    //     data: venduto,
-    //     options: options
-    // });
 
-    var ctx = $('#ChartBool');
-    var chart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['Gennaio' , 'Febbraio' , 'Marzo' , 'Aprile' , 'Maggio' , 'Giugno' ,'Luglio' ,'Agosto' , 'Settembre' , 'Ottobre' , 'Novembre' , 'Dicembre'],
-            datasets: [{
-                label: 'Vendite Annuali',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: venduto,
-            }],
-        },
-    });
+
+
 
 
 });

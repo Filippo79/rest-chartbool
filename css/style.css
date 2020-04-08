@@ -9,3 +9,16 @@
     display: table;
     clear: both;
 }
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grafico {
+    height: 400px;
+    width: 600px;
+}
