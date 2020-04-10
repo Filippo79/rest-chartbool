@@ -7,17 +7,37 @@
         <link rel="stylesheet" href="css/style.css">
         <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js" charset="utf-8"></script> -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/it-ch.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-        <title>ChartBool Filippo</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/it-ch.js"></script>
+        <title>ChartBool</title>
     </head>
     <body>
         <div class="container">
-            <div class="grafico">
-            <canvas id="ChartBool"></canvas>
+            <div class="container-dati">
+                <div class="inserisci-dati">
+                    <select id="venditore">
+                        <option value=""></option>
+                        <option value="Giuseppe">Giuseppe</option>
+                        <option value="Marco">Marco</option>
+                        <option value="Roberto">Roberto</option>
+                        <option value="Riccardo">Ricardo</option>
+                    </select>
+                    <input id="input-data"type="date"value="2017-01-01" min="2017-01-01" max="2017-12-31">
+                    <input id="input-venduto"type="number"value="">
+                    <button id="btn-invia">Invia</button>
+                </div>
             </div>
+            <div class="container-grafici">
+                <div class="grafico line">
+                    <canvas id="grafico-line"></canvas>
+                </div>
+                <div class="grafico pie">
+                    <canvas id="grafico-pie"></canvas>
+                </div>
+            </div>
+
 
 
         </div>

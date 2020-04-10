@@ -11,14 +11,56 @@
 }
 
 .container {
-    height: 100vh;
+    background-color: lightcyan
+}
+
+.container-dati {
     width: 100vw;
+    height: 100px;
     display: flex;
     justify-content: center;
+}
+
+.inserisci-dati {
+    background-color: lightgrey;
+    border-radius: 10px;
+    margin: 10px;
+    border: 2px solid darkgreen;
+    display: flex;
     align-items: center;
+    padding: 20px;
+}
+#venditore,
+#input-data,
+#input-venduto {
+    border-radius: 10px;
+    height: 40px;
+    width: 150px;
+    font-size: 15px;
+    text-align: center;
+}
+
+#btn-invia {
+    height: 40px;
+    width: 50px;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.container-grafici {
+    height: 100vh;
+    width: 100vw;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
 }
 
 .grafico {
-    height: 400px;
-    width: 600px;
+    height: 50%;
+    width: 50%;
+}
+
+.inserisci-dati {
+    float: left;
 }
