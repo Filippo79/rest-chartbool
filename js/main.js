@@ -18,10 +18,33 @@ $(document).ready(function() {
                 date: dataVendutoFormattata
             },
             success: function (data) {
+                console.log(data);
                 stampaGrafici();
             },
             error: function (err) {
                 alert('Ciao bello be !!!!!');
+            }
+        });
+    });
+    $('#btn-modifica').click(function(){
+        var nomeVenditore = $('#venditore').val();
+        var dataVenduto = $('#input-data').val();
+        var dataVendutoFormattata = moment(dataVenduto, 'YYYY-MM-DD').format('DD/MM/YYYY');
+        var venduto = parseInt($('#input-venduto').val());
+        $.ajax({
+            url: baseUrl,
+            method: 'PUT',
+            data: {
+                salesman:nomeVenditore,
+                amount: venduto,
+                date: dataVendutoFormattata,
+            },
+            success: function (data) {
+                console.log(data);
+                stampaGrafici();
+            },
+            error: function (err) {
+                alert('Ciao bello be!!!!!');
             }
         });
     });
@@ -137,8 +160,8 @@ $(document).ready(function() {
             data: {
                 datasets: [{
                     data: arrayData,
-                    backgroundColor: ['Red','Yellow','Blue', 'orange'],
-                    hoverBackgroundColor: ['lightcoral', 'palegoldenrod', 'deepskyblue', 'lightsalmon'],
+                    backgroundColor: ['Red','Yellow','Blue', 'orange','turquoise','slateblue'],
+                    hoverBackgroundColor: ['lightcoral', 'palegoldenrod', 'deepskyblue', 'lightsalmon','mediumturquoise','mediumslateblue'],
                     borderColor: '#727272',
                 }],
                 labels: arrayLabels

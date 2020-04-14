@@ -33,6 +33,7 @@
 #venditore,
 #input-data,
 #input-venduto {
+    border: 1px solid darkgray;
     border-radius: 10px;
     height: 40px;
     width: 150px;
@@ -45,7 +46,19 @@
     width: 50px;
     font-size: 15px;
     text-align: center;
+    border: 1px solid darkgray;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+#btn-modifica {
+    height: 30px;
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid darkgray;
+    border-radius: 10px;
+    cursor: pointer
 }
 
 .container-grafici {
